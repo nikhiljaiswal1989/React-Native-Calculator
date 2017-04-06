@@ -5,6 +5,9 @@ react-native calculator using redux
 ##Android
 
 
+![videotogif_2017 04 06_22 28 24](https://cloud.githubusercontent.com/assets/26959963/24767442/9a36ef42-1b1c-11e7-9319-16f4f1078b48.gif)
+
+
 ![screenshot_2017-04-06-15-37-48](https://cloud.githubusercontent.com/assets/26959963/24753072/407d37d2-1aee-11e7-8163-a0a6b7273ff7.png)
 ![screenshot_2017-04-06-15-38-16](https://cloud.githubusercontent.com/assets/26959963/24753130/82cf4d96-1aee-11e7-9a1c-b75e5bc00e7b.png)
 
