@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Dimensions } from 'react-native';
+import { View, Dimensions, Platform } from 'react-native';
 import GridView from 'react-native-easy-grid-view';
 import { connect } from 'react-redux';
 import { displayChanged } from './actions';
@@ -12,11 +12,11 @@ const { height } = Dimensions.get('window');
 
 
 class Calculator extends Component {
- 
   render() {
+    const padding = (Platform.OS === 'ios') ? 58 : 82;
     const { keyPadContainer, numberContainer, opratorContainer } = styles;
     return (
-      <View style={{ height: height - 82 }}>
+      <View style={{ height: height - padding }}>
         <DisplaySection
           displayText={this.props.displaytext}
           displayresult={this.props.displayresult}/>
