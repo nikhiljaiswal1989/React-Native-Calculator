@@ -32,3 +32,5 @@ gradle.properties~
 node_modules/
 *.vscode
 
+*.iml
+.idea/
