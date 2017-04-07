@@ -12,6 +12,19 @@ const { height } = Dimensions.get('window');
 
 
 class Calculator extends Component {
+  displayGrid(data) {
+    return (
+      <GridView
+        dataSource={data}
+        renderCell={(cell) => <Button
+          text={cell}
+          height={60}
+          onPress={() => this.props.displayChanged(cell) }
+          />}
+        />
+    );
+  }
+
   render() {
     const padding = (Platform.OS === 'ios') ? 58 : 82;
     const { keyPadContainer, numberContainer, opratorContainer } = styles;
@@ -22,22 +35,10 @@ class Calculator extends Component {
           displayresult={this.props.displayresult}/>
         <View style={keyPadContainer}>
           <View style={numberContainer}>
-            <GridView
-              dataSource={dataSource}
-              renderCell={(cell) => <Button
-                text={cell}
-                height={60}
-                onPress={() => this.props.displayChanged(cell) }
-                />}
-              />
+            {this.displayGrid(dataSource) }
           </View>
           <View style={opratorContainer}>
-            <GridView
-              dataSource={oprationSource}
-              renderCell={(cell) => <Button
-                text={cell}
-                height={60}
-                onPress={() => this.props.displayChanged(cell) }/>}/>
+            {this.displayGrid(oprationSource) }
           </View>
         </View>
       </View>
