@@ -1,7 +1,7 @@
-//import {DISPLAY_CHANGED} from './type'
+import {DISPLAY_CHANGED} from './types'
 export const displayChanged = (text) => {
   return {
-    type: 'display_changed',
+    type: DISPLAY_CHANGED,
     payload: text
   };
 };

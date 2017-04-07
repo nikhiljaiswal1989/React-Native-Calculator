@@ -1,14 +1,14 @@
-//import {DISPLAY_CHANGED} from '../actions/type'
+import {DISPLAY_CHANGED} from '../actions/types'
 
 const INITIAL_STATE = { displaytext: '', displayresult: '' };
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case 'display_changed':
+        case DISPLAY_CHANGED:
             switch (action.payload) {
                 case 'DEL':
                     return { ...state, displaytext: state.displaytext.slice(0, -1), displayresult: '' };
                 case 'CLR':
-                    return { ...state, displaytext: '', displayresult: '' };
+                    return { ...state, ...INITIAL_STATE };
                 case '.':
                     if (state.displaytext.includes('.') === true)
                         return { ...state, displaytext: state.displaytext };
