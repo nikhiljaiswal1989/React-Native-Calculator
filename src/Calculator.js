@@ -9,7 +9,7 @@ const ds = new GridView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
 const dataSource = ds.cloneWithCells([7, 8, 9, 4, 5, 6, 1, 2, 3, '.', 0, '=', '(', ')', 'DEL'], 3);
 const oprationSource = ds.cloneWithCells(['CLR', '/', '*', '-', '+'], 1);
 const { height } = Dimensions.get('window');
-
+const padding = (Platform.OS === 'ios') ? 58 : 82;
 
 class Calculator extends Component {
   displayGrid(data) {
@@ -18,7 +18,7 @@ class Calculator extends Component {
         dataSource={data}
         renderCell={(cell) => <Button
           text={cell}
-          height={60}
+          height={(height - padding) * 0.12}
           onPress={() => this.props.displayChanged(cell) }
           />}
         />
@@ -26,7 +26,6 @@ class Calculator extends Component {
   }
 
   render() {
-    const padding = (Platform.OS === 'ios') ? 58 : 82;
     const { keyPadContainer, numberContainer, opratorContainer } = styles;
     return (
       <View style={{ height: height - padding }}>
@@ -48,7 +47,7 @@ class Calculator extends Component {
 
 const styles = {
   keyPadContainer: {
-    height: 300,
+    height: (height - padding) * 0.6,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
